@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        header{
+            width: 100%;
+            height: 50px;
+            background-color: aquamarine;
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        header * {display: inline;}
+        header li {
+            margin: 20px;
+        }
+        header li a{
+            color: blue;
+            text-decoration: none;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>welcome {{user_data}}</h1>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/recipe/home">Home</a></li>
+                <li><a href="/recipe/index">Recipe</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="/recipe/logout">Logout</a></li>
+                {% else %}
+                <li><a href="/recipe/login">Login</a></li>
+                <li><a href="/recipe/register">Register</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    
+ 
+</body>
+
+</html> 
